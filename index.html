@@ -865,9 +865,13 @@
     }
 
     .certificates-band {
-      background: linear-gradient(180deg, #f8fbff 0%, #eef8ff 100%);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      position: relative;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 34%),
+        radial-gradient(circle at top right, rgba(15, 118, 110, 0.08), transparent 30%),
+        linear-gradient(180deg, #f7fbff 0%, #eef5ff 48%, #f8fbff 100%);
+      border-top: 1px solid rgba(148, 163, 184, 0.24);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.24);
     }
 
     .certificates-grid {
@@ -879,42 +883,68 @@
     .certificate-card {
       min-height: 260px;
       padding: 22px;
-      border: 1px solid var(--line);
+      border: 1px solid rgba(148, 163, 184, 0.22);
       border-radius: var(--radius);
-      background: #fff;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(248, 250, 252, 0.98) 100%);
       display: flex;
       flex-direction: column;
       gap: 16px;
-      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
-      transition: transform 0.24s ease, box-shadow 0.24s ease;
+      box-shadow:
+        0 16px 36px rgba(15, 23, 42, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+      position: relative;
+      overflow: hidden;
     }
 
     .certificate-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 22px 44px rgba(15, 23, 42, 0.13);
+      border-color: rgba(59, 130, 246, 0.28);
+      box-shadow:
+        0 24px 48px rgba(15, 23, 42, 0.14),
+        0 0 0 1px rgba(255, 255, 255, 0.7) inset;
     }
 
-    .certificate-card.mern-cert {
-      border-top: 4px solid var(--blue);
-      background: linear-gradient(180deg, #eff6ff 0%, #ffffff 58%);
+    .certificate-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 5px;
+      background: var(--card-accent, linear-gradient(90deg, var(--blue), var(--teal)));
     }
 
-    .certificate-card.ai-cert {
-      border-top: 4px solid var(--plum);
-      background: linear-gradient(180deg, #f5f3ff 0%, #ffffff 58%);
+    .certificate-card.mern-cert,
+    .certificate-card.aws-cloudwatch {
+      --card-accent: linear-gradient(90deg, #2563eb, #0f766e);
     }
 
-    .certificate-card.analytics-cert {
-      border-top: 4px solid var(--mint);
-      background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 58%);
+    .certificate-card.ai-cert,
+    .certificate-card.aws-ml {
+      --card-accent: linear-gradient(90deg, #7c3aed, #2563eb);
+    }
+
+    .certificate-card.analytics-cert,
+    .certificate-card.data-cert {
+      --card-accent: linear-gradient(90deg, #059669, #0f766e);
+    }
+
+    .certificate-card.cyber-cert {
+      --card-accent: linear-gradient(90deg, #0f766e, #14b8a6);
+    }
+
+    .certificate-card.tech-cert,
+    .certificate-card.aws-devops {
+      --card-accent: linear-gradient(90deg, #1d4ed8, #7c3aed);
     }
 
     .certificate-kicker {
-      color: var(--blue);
+      color: #0f766e;
       font-size: 0.78rem;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 0;
+      letter-spacing: 0.08em;
     }
 
     .certificate-card.ai-cert .certificate-kicker {
@@ -923,6 +953,13 @@
 
     .certificate-card.analytics-cert .certificate-kicker {
       color: var(--green);
+    }
+
+    .certificate-card.cyber-cert .certificate-kicker,
+    .certificate-card.aws-cloudwatch .certificate-kicker,
+    .certificate-card.aws-ml .certificate-kicker,
+    .certificate-card.aws-devops .certificate-kicker {
+      color: #1d4ed8;
     }
 
     .certificate-card h3 {
@@ -947,9 +984,9 @@
     .certificate-tags span {
       padding: 5px 8px;
       border-radius: 999px;
-      color: #17466a;
-      background: #eaf4ff;
-      border: 1px solid rgba(37, 99, 235, 0.1);
+      color: #0f3d63;
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.12);
       font-size: 0.78rem;
       font-weight: 800;
     }
@@ -960,17 +997,43 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 8px 12px;
+      padding: 9px 14px;
       border-radius: 8px;
       color: #fff;
-      background: linear-gradient(135deg, var(--blue), var(--teal));
+      background: linear-gradient(135deg, #1d4ed8, #0f766e);
       font-weight: 900;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 22px rgba(29, 78, 216, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
     }
 
     .certificate-link:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.18);
+      filter: saturate(1.05);
+      box-shadow: 0 14px 26px rgba(29, 78, 216, 0.24);
+    }
+
+    .certificate-card.ai-cert .certificate-link,
+    .certificate-card.tech-cert .certificate-link {
+      background: linear-gradient(135deg, #7c3aed, #2563eb);
+      box-shadow: 0 10px 22px rgba(124, 58, 237, 0.18);
+    }
+
+    .certificate-card.analytics-cert .certificate-link,
+    .certificate-card.data-cert .certificate-link {
+      background: linear-gradient(135deg, #059669, #0f766e);
+      box-shadow: 0 10px 22px rgba(5, 150, 105, 0.18);
+    }
+
+    .certificate-card.cyber-cert .certificate-link,
+    .certificate-card.aws-cloudwatch .certificate-link,
+    .certificate-card.aws-devops .certificate-link {
+      background: linear-gradient(135deg, #0f766e, #2563eb);
+      box-shadow: 0 10px 22px rgba(15, 118, 110, 0.18);
+    }
+
+    .certificate-card.aws-ml .certificate-link {
+      background: linear-gradient(135deg, #1d4ed8, #7c3aed);
+      box-shadow: 0 10px 22px rgba(29, 78, 216, 0.18);
     }
 
     .contact-band {
@@ -1100,7 +1163,8 @@
 
       .timeline-item,
       .education-grid,
-      .certificates-grid {
+      .certificates-grid,
+      .aws-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -1169,7 +1233,8 @@
       .metrics,
       .skills-board,
       .projects-grid,
-      .certificates-grid {
+      .certificates-grid,
+      .aws-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1227,6 +1292,7 @@
             </p>
             <div class="hero-actions">
               <a class="button primary" href="#projects">View Projects</a>
+              <a class="button dark" href="https://drive.google.com/file/d/144yaCfeP11DmgCpyozoESh7f09N0xppG/view?usp=sharing" target="_blank" rel="noreferrer">Resume</a>
               <a class="button secondary" href="mailto:prajwalkhot39@gmail.com">Email Me</a>
             </div>
           </div>
@@ -1370,7 +1436,7 @@
           <div class="timeline">
             <article class="timeline-item">
               <div>
-                <time datetime="2026-02">Feb 2026 - May 2026</time>
+                <time datetime="2026-01">Jan 2026 - Apr 2026</time>
                 <h3>MERN Stack Development Intern</h3>
                 <p>Liganda Software Solution, Nipani</p>
               </div>
@@ -1571,9 +1637,82 @@
               </div>
               <a class="certificate-link" href="https://drive.google.com/file/d/1CdTd2bBDIxEQiVrAUWaaO-J4PLanJE_U/view?usp=sharing" target="_blank" rel="noreferrer">View Certificate</a>
             </article>
+
+            <article class="certificate-card cyber-cert">
+              <span class="certificate-kicker">Deloitte certificate</span>
+              <h3>Deloitte Cyber Job Simulation</h3>
+              <p>Completed a job simulation involving reading web activity logs. Supported a client in a cyber security breach. Answered questions to identify suspicious user activity.</p>
+              <div class="certificate-tags">
+                <span>Cyber Security</span>
+                <span>Web Logs</span>
+                <span>Forage</span>
+              </div>
+              <a class="certificate-link" href="file:///D:/P.P.K/Placement/Skills/Deloitte%20Cyber%20Job%20Simulation.pdf" target="_blank" rel="noreferrer">View Certificate</a>
+            </article>
+
+            <article class="certificate-card data-cert">
+              <span class="certificate-kicker">Deloitte certificate</span>
+              <h3>Deloitte Data Analytics Job Simulation</h3>
+              <p>Completed a Deloitte job simulation involving data analysis and forensic technology. Created a data dashboard using Tableau. Used Excel to classify data and draw business conclusions.</p>
+              <div class="certificate-tags">
+                <span>Data Analytics</span>
+                <span>Tableau</span>
+                <span>Excel</span>
+              </div>
+              <a class="certificate-link" href="file:///D:/P.P.K/Placement/Skills/Deloitte%20Data%20Analytics%20Job%20Simulation.pdf" target="_blank" rel="noreferrer">View Certificate</a>
+            </article>
+
+            <article class="certificate-card tech-cert">
+              <span class="certificate-kicker">Deloitte certificate</span>
+              <h3>Deloitte Technology Job Simulation Certificate</h3>
+              <p>Completed a job simulation involving development and coding. Wrote a proposal for creating a dashboard.</p>
+              <div class="certificate-tags">
+                <span>Technology</span>
+                <span>Coding</span>
+                <span>Forage</span>
+              </div>
+              <a class="certificate-link" href="file:///D:/P.P.K/Placement/Skills/Deloitte%20Technology%20Job%20Simulation%20Certificate.pdf" target="_blank" rel="noreferrer">View Certificate</a>
+            </article>
+            <article class="certificate-card aws-cloudwatch">
+              <span class="certificate-kicker">AWS certificate</span>
+              <h3>Amazon CloudWatch Getting Started</h3>
+              <p>Introduces CloudWatch fundamentals for monitoring, logging, and operational visibility in AWS environments.</p>
+              <div class="certificate-tags">
+                <span>CloudWatch</span>
+                <span>Monitoring</span>
+                <span>AWS</span>
+              </div>
+              <a class="certificate-link" href="https://drive.google.com/file/d/1KCkcui6GxwCLjvf1RE1IhalQGxvh96ft/view?usp=sharing" target="_blank" rel="noreferrer">View Certificate</a>
+            </article>
+
+            <article class="certificate-card aws-ml">
+              <span class="certificate-kicker">AWS certificate</span>
+              <h3>Exam Prep Plan Overview: AWS Certified Machine Learning Engineer - Associate</h3>
+              <p>Preparation overview for the AWS Certified Machine Learning Engineer - Associate path and related exam planning.</p>
+              <div class="certificate-tags">
+                <span>Machine Learning</span>
+                <span>Exam Prep</span>
+                <span>AWS</span>
+              </div>
+              <a class="certificate-link" href="https://drive.google.com/file/d/1jeEalqh8c_ErCGIjXJy-ZR9ZR1jz8dNN/view?usp=sharing" target="_blank" rel="noreferrer">View Certificate</a>
+            </article>
+
+            <article class="certificate-card aws-devops">
+              <span class="certificate-kicker">AWS certificate</span>
+              <h3>Getting Started with DevOps on AWS</h3>
+              <p>Introductory credential covering DevOps concepts, workflows, and AWS services used in modern delivery pipelines.</p>
+              <div class="certificate-tags">
+                <span>DevOps</span>
+                <span>Cloud</span>
+                <span>AWS</span>
+              </div>
+              <a class="certificate-link" href="https://drive.google.com/file/d/1yqxuAKJMrg16tuXSbz9Vj3P9SWWUUR57/view?usp=sharing" target="_blank" rel="noreferrer">View Certificate</a>
+            </article>
           </div>
         </div>
       </section>
+
+
 
       <section class="contact-band" id="contact" aria-labelledby="contact-title">
         <div class="contact-grid">
@@ -1585,14 +1724,14 @@
             </p>
             <div class="contact-actions">
               <a class="button primary" href="mailto:prajwalkhot39@gmail.com">Start a Conversation</a>
-              <a class="button secondary" href="tel:+918508311522">Call</a>
+              <a class="button secondary" href="tel:+918050131522">Call</a>
             </div>
           </div>
           <ul class="contact-list">
             <li><button type="button" data-copy="prajwalkhot39@gmail.com"><span>Email</span><strong>prajwalkhot39@gmail.com</strong></button></li>
             <li><a href="https://www.linkedin.com/in/prajwal-p-khot" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>prajwal-p-khot</strong></a></li>
             <li><a href="https://github.com/prajwalkho" target="_blank" rel="noreferrer"><span>GitHub</span><strong>prajwalkho</strong></a></li>
-            <li><button type="button" data-copy="+91 8508311522"><span>Phone</span><strong>+91 8050131522</strong></button></li>
+            <li><button type="button" data-copy="+91 8050131522"><span>Phone</span><strong>+91 8050131522</strong></button></li>
           </ul>
         </div>
       </section>
@@ -1691,3 +1830,8 @@
   </script>
 </body>
 </html>
+
+
+
+
+
