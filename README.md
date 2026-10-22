@@ -1,136 +1,62 @@
-# Mini Game Hub
+# Prajwal Khot — Developer Portfolio
 
-Mini Game Hub is a lightweight, browser-based collection of classic mini games built with plain HTML, CSS, and JavaScript. The project delivers a polished single-page experience with a modern UI, theme switching, responsive layout, and simple sound effects.
+A responsive, single-page portfolio introducing my background, technical skills, experience, projects, education, certificates, and contact links.
 
-## Project Overview
+**Source:** [GitHub repository](https://github.com/prajwalkho/Prajwal_Portfolio)
+**Live portfolio:** [Visit the website](https://prajwal-portfolio-umber.vercel.app/)
 
-This project was created as a fun and educational web application that combines multiple simple games in one place. Instead of using a framework or external libraries, it focuses on core web technologies to keep the project easy to understand, modify, and run.
+## About
 
-The app currently includes four interactive games:
-- Rock Paper Scissors
-- Tic Tac Toe
-- Memory Card Game
-- Snake
+I am a Bachelor of Computer Applications student with hands-on MERN stack internship experience. I enjoy building practical web applications, working with REST APIs and databases, and creating clear, responsive user experiences.
 
-## Features
+## Portfolio highlights
 
-### 🎮 Multi-game experience
-The hub provides a central menu where users can switch between games without leaving the page.
+- **HireMentor AI** — [Live site](https://hirementor-ai.vercel.app) · [GitHub](https://github.com/prajwalkho/HireMentor-AI)
+- **Arogya Vahini Healthcare Platform** — [Live site](https://arogya-vahini-dun.vercel.app) · [GitHub](https://github.com/prajwalkho/Arogya-Vahini)
+- **Grandmaster Chess Game** — [Live site](https://grandmaster-chess-pro.vercel.app) · [GitHub](https://github.com/prajwalkho/grandmaster-chess)
+- **MyTube Website Frontend** — [GitHub](https://github.com/prajwalkho/my-tube)
+- **Infinite Tic Tac Toe Pro** — [Live demo](https://infinite-tic-tac-toe-pro.netlify.app/) · [GitHub](https://github.com/prajwalkho/infinite-tic-tac-toe)
+- **Mini Game Hub** — [Live demo](https://mini-game-hub-zeta.vercel.app/) · [GitHub](https://github.com/prajwalkho/Prajwal_Portfolio)
 
-### 🌗 Dark and light theme toggle
-The interface includes a theme switcher that lets users toggle between light and dark mode. The selected theme is saved in the browser using local storage so it persists across refreshes.
+## Built with
 
-### 📱 Responsive design
-The layout adapts to different screen sizes, making it usable on desktops, tablets, and mobile devices.
+- HTML5
+- CSS3
+- Vanilla JavaScript
 
-### 🔊 Simple sound feedback
-The app uses the Web Audio API to produce basic tones for some game interactions such as wins and scoring events.
+The page is implemented in a single `index.html` file and does not require a framework, package installation, or build step.
 
-### ✨ Clean UI
-The project uses gradients, glassmorphism-style effects, rounded buttons, and smooth transitions to create an attractive interface.
+## Run locally
 
-## Games Included
+You can open `index.html` directly in a modern browser. To preview it through a local web server:
 
-### 1. Rock Paper Scissors
-A simple single-player game where the player chooses Rock, Paper, or Scissors and competes against the computer.
+1. Open a terminal in the project folder.
+2. Start Python's built-in static server:
 
-How it works:
-- The player selects one option.
-- The computer randomly chooses one option.
-- The result is determined by classic rules.
-- The player score increases when the player wins.
+   ```powershell
+   # Windows
+   py -m http.server 8000
 
-### 2. Tic Tac Toe
-A two-player-style game against the computer.
+   # macOS or Linux
+   python3 -m http.server 8000
+   ```
 
-How it works:
-- The player starts as X.
-- The computer automatically plays as O.
-- The game checks for a win condition after each move.
-- The board resets when the player selects the restart option.
+3. Visit [http://localhost:8000](http://localhost:8000).
+4. Press `Ctrl+C` in the terminal to stop the server.
 
-### 3. Memory Game
-A matching-card game where players try to find pairs of matching symbols.
+## Repository contents
 
-How it works:
-- Cards are shuffled at the start.
-- The player clicks two cards at a time.
-- Matching cards stay revealed.
-- Non-matching cards flip back after a short delay.
+| Path | Description |
+| --- | --- |
+| `index.html` | Portfolio page, including its styles and interactive behavior |
+| `README.md` | Project overview and local preview instructions |
+| `certificates/` | PDF certificates for Data Analytics, MERN Full Stack, and Generative AI |
+| `Prajwal_Khot_Resume (3).pdf` | Resume PDF |
 
-### 4. Snake Game
-A classic snake game where the player controls a growing snake and tries to eat food.
+The resume and certificates are also linked from the portfolio. The resume button currently opens a hosted Google Drive copy; certificate buttons open their hosted copies.
 
-How it works:
-- The snake moves continuously across the canvas.
-- The player uses arrow keys to change direction.
-- Eating food increases the score and lengthens the snake.
-- The snake moves forward continuously in a loop.
+## Updating the portfolio
 
-## Project Structure
-
-The project is intentionally simple and is centered around a single file:
-
-- index.html – Contains the full structure, styles, game logic, and interactivity.
-
-## Technologies Used
-
-- HTML5 for structure
-- CSS3 for styling and layout
-- JavaScript for game logic and DOM manipulation
-- Web Audio API for sound effects
-- Local Storage for theme persistence
-
-## How to Run the Project
-
-No installation or package manager is required.
-
-1. Open the project folder.
-2. Double-click the index.html file, or open it in your browser.
-3. Start playing the games from the main menu.
-
-You can also run it using a simple local server if you prefer, but it is not necessary for this project.
-
-## File Details
-
-### index.html
-This single file contains:
-- The main menu UI
-- Screen switching logic
-- Styling for all games
-- Game implementation for each mini-game
-- Theme toggle behavior
-- Basic audio response
-
-## Customization Ideas
-
-You can extend the project in many ways, including:
-- Adding more games such as quiz, hangman, or puzzle games
-- Improving the Snake game with collision detection and game-over logic
-- Adding score history or high-score tracking
-- Adding animations and particle effects
-- Supporting sound toggle controls
-- Creating a more advanced game selection screen
-
-## Future Improvements
-
-Possible upcoming enhancements:
-- Better game-over screens
-- Score persistence across sessions
-- Sound on/off settings
-- Difficulty levels
-- Leaderboards
-- A more polished visual design
-
-## Why This Project Is Useful
-
-Mini Game Hub is a great example of:
-- Front-end web development fundamentals
-- DOM manipulation in JavaScript
-- Event handling and UI state management
-- Responsive design implementation
-- Building interactive features without frameworks
-
-## License
-
-This project is open for personal and educational use. If you plan to share or extend it, feel free to do so with attribution.
+- Edit the page content, styles, and behavior in `index.html`.
+- Keep the resume and certificate files in their existing locations, or update the corresponding links when changing file names or hosting locations.
+- Preview the page locally and check the navigation, project links, and document links after making changes.
