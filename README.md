@@ -7,7 +7,7 @@ A responsive, single-page portfolio introducing my background, technical skills,
 
 ## About
 
-I am a Bachelor of Computer Applications student with hands-on MERN stack internship experience. I enjoy building practical web applications, working with REST APIs and databases, and creating clear, responsive user experiences.
+I am a Bachelor of Computer Applications graduate with hands-on MERN stack internship experience. I enjoy building practical web applications, working with REST APIs and databases, and creating clear, responsive user experiences.
 
 ## Portfolio highlights
 

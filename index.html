@@ -1183,6 +1183,8 @@
     }
 
     .certificate-card {
+      --certificate-ink: #2563eb;
+      --certificate-wash: rgba(37, 99, 235, 0.12);
       min-height: 260px;
       padding: 22px;
       border: 1px solid rgba(148, 163, 184, 0.22);
@@ -1239,6 +1241,66 @@
     .certificate-card.tech-cert,
     .certificate-card.aws-devops {
       --card-accent: linear-gradient(90deg, #1d4ed8, #7c3aed);
+    }
+
+    .certificate-card.mern-cert { --certificate-ink: #147b83; --certificate-wash: rgba(20, 123, 131, 0.15); }
+    .certificate-card.ai-cert { --certificate-ink: #7447ca; --certificate-wash: rgba(116, 71, 202, 0.15); }
+    .certificate-card.analytics-cert { --certificate-ink: #16805b; --certificate-wash: rgba(22, 128, 91, 0.14); }
+    .certificate-card.cyber-cert { --certificate-ink: #087c78; --certificate-wash: rgba(8, 124, 120, 0.15); }
+    .certificate-card.data-cert { --certificate-ink: #2c8658; --certificate-wash: rgba(44, 134, 88, 0.15); }
+    .certificate-card.tech-cert { --certificate-ink: #4355bb; --certificate-wash: rgba(67, 85, 187, 0.15); }
+    .certificate-card.aws-cloudwatch { --certificate-ink: #d16b1f; --certificate-wash: rgba(209, 107, 31, 0.16); }
+    .certificate-card.aws-ml { --certificate-ink: #6350bd; --certificate-wash: rgba(99, 80, 189, 0.16); }
+    .certificate-card.aws-devops { --certificate-ink: #be651f; --certificate-wash: rgba(190, 101, 31, 0.16); }
+
+    .certificate-art {
+      min-height: 102px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      overflow: hidden;
+      border: 1px solid color-mix(in srgb, var(--certificate-ink), transparent 78%);
+      border-radius: 7px;
+      background:
+        radial-gradient(circle at 92% 18%, var(--certificate-wash), transparent 35%),
+        linear-gradient(125deg, #fff 0%, #f8fafc 68%, #f1f5f9 100%);
+    }
+
+    .certificate-art-copy {
+      min-width: 0;
+      display: grid;
+      gap: 4px;
+    }
+
+    .certificate-art-copy span {
+      color: var(--certificate-ink);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .certificate-art-copy strong {
+      color: var(--navy);
+      font-size: 0.96rem;
+      line-height: 1.25;
+    }
+
+    .certificate-seal {
+      width: 54px;
+      height: 54px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid color-mix(in srgb, var(--certificate-ink), transparent 30%);
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--certificate-ink), white 91%);
+      color: var(--certificate-ink);
+      font-size: 0.9rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
     }
 
     .certificate-kicker {
@@ -1589,7 +1651,7 @@
             <p class="eyebrow">MERN Stack Developer</p>
             <h1 id="hero-title">Prajwal Khot</h1>
             <p class="hero-copy">
-              BCA student and software developer building responsive full-stack web applications with React, Node.js,
+              BCA graduate and software developer building responsive full-stack web applications with React, Node.js,
               Express, MongoDB, REST APIs, and practical Generative AI integrations.
             </p>
             <div class="hero-actions">
@@ -1614,7 +1676,7 @@
               </div>
               <div class="metric">
                 <strong>2026</strong>
-                <span>BCA graduation</span>
+                <span>BCA graduate</span>
               </div>
               <div class="metric">
                 <strong>8.07</strong>
@@ -1641,7 +1703,7 @@
         <div class="about-grid">
           <article class="profile-block">
             <p>
-              I am a Bachelor of Computer Applications student with internship experience in MERN stack development,
+              I am a Bachelor of Computer Applications graduate with internship experience in MERN stack development,
               REST API integration, database design, and collaborative hackathon delivery. I enjoy turning product ideas
               into working web applications with practical engineering choices and clear user experiences.
             </p>
@@ -1997,6 +2059,7 @@
           <div class="certificates-grid">
             <article class="certificate-card mern-cert">
               <span class="certificate-kicker">Professional certificate</span>
+              <div class="certificate-art" aria-hidden="true"><div class="certificate-art-copy"><span>Full stack</span><strong>Build across the stack</strong></div><div class="certificate-seal">&lt;/&gt;</div></div>
               <h3>Full Stack Web Development - MERN Stack</h3>
               <p>Credential focused on building complete web applications with MongoDB, Express.js, React.js, and Node.js.</p>
               <div class="certificate-tags">
@@ -2009,6 +2072,7 @@
 
             <article class="certificate-card ai-cert">
               <span class="certificate-kicker">Professional certificate</span>
+              <div class="certificate-art" aria-hidden="true"><div class="certificate-art-copy"><span>Generative AI</span><strong>Ideas into intelligent tools</strong></div><div class="certificate-seal">✦</div></div>
               <h3>Generative AI</h3>
               <p>Credential highlighting practical understanding of Generative AI concepts and modern AI-powered workflows.</p>
               <div class="certificate-tags">
@@ -2021,6 +2085,7 @@
 
             <article class="certificate-card analytics-cert">
               <span class="certificate-kicker">Professional certificate</span>
+              <div class="certificate-art" aria-hidden="true"><div class="certificate-art-copy"><span>Data analytics</span><strong>Find the story in data</strong></div><div class="certificate-seal">▂▅▇</div></div>
               <h3>Data Analytics</h3>
               <p>Credential focused on interpreting data, analytical thinking, and data-driven problem solving for software projects.</p>
               <div class="certificate-tags">
@@ -2033,6 +2098,7 @@
 
             <article class="certificate-card cyber-cert">
               <span class="certificate-kicker">Deloitte certificate</span>
+              <div class="certificate-art" aria-hidden="true"><div class="certificate-art-copy"><span>Cyber simulation</span><strong>Investigate digital activity</strong></div><div class="certificate-seal">D</div></div>
               <h3>Deloitte Cyber Job Simulation</h3>
               <p>Completed a job simulation involving reading web activity logs. Supported a client in a cyber security breach. Answered questions to identify suspicious user activity.</p>
               <div class="certificate-tags">
@@ -2045,6 +2111,7 @@
 
             <article class="certificate-card data-cert">
               <span class="certificate-kicker">Deloitte certificate</span>
+              <div class="certificate-art" aria-hidden="true"><div class="certificate-art-copy"><span>Analytics simulation</span><strong>Turn evidence into insight</strong></div><div class="certificate-seal">↗</div></div>
               <h3>Deloitte Data Analytics Job Simulation</h3>
               <p>Completed a Deloitte job simulation involving data analysis and forensic technology. Created a data dashboard using Tableau. Used Excel to classify data and draw business conclusions.</p>
               <div class="certificate-tags">
@@ -2057,6 +2124,7 @@
 
             <article class="certificate-card tech-cert">
               <span class="certificate-kicker">Deloitte certificate</span>
+              <div class="certificate-art" aria-hidden="true"><div class="certificate-art-copy"><span>Technology simulation</span><strong>Shape a digital solution</strong></div><div class="certificate-seal">&lt;/&gt;</div></div>
               <h3>Deloitte Technology Job Simulation Certificate</h3>
               <p>Completed a job simulation involving development and coding. Wrote a proposal for creating a dashboard.</p>
               <div class="certificate-tags">
@@ -2068,6 +2136,7 @@
             </article>
             <article class="certificate-card aws-cloudwatch">
               <span class="certificate-kicker">AWS certificate</span>
+              <div class="certificate-art" aria-hidden="true"><div class="certificate-art-copy"><span>AWS CloudWatch</span><strong>Observe what matters</strong></div><div class="certificate-seal">aws</div></div>
               <h3>Amazon CloudWatch Getting Started</h3>
               <p>Introduces CloudWatch fundamentals for monitoring, logging, and operational visibility in AWS environments.</p>
               <div class="certificate-tags">
@@ -2080,6 +2149,7 @@
 
             <article class="certificate-card aws-ml">
               <span class="certificate-kicker">AWS certificate</span>
+              <div class="certificate-art" aria-hidden="true"><div class="certificate-art-copy"><span>Machine learning</span><strong>Prepare for applied ML</strong></div><div class="certificate-seal">ML</div></div>
               <h3>Exam Prep Plan Overview: AWS Certified Machine Learning Engineer - Associate</h3>
               <p>Preparation overview for the AWS Certified Machine Learning Engineer - Associate path and related exam planning.</p>
               <div class="certificate-tags">
@@ -2092,6 +2162,7 @@
 
             <article class="certificate-card aws-devops">
               <span class="certificate-kicker">AWS certificate</span>
+              <div class="certificate-art" aria-hidden="true"><div class="certificate-art-copy"><span>AWS DevOps</span><strong>Build · ship · improve</strong></div><div class="certificate-seal">∞</div></div>
               <h3>Getting Started with DevOps on AWS</h3>
               <p>Introductory credential covering DevOps concepts, workflows, and AWS services used in modern delivery pipelines.</p>
               <div class="certificate-tags">
